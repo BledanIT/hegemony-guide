@@ -1,0 +1,69 @@
+<!doctype HTML>
+<html>
+    <head>
+        <title>Hegemony</title>
+        <link rel="stylesheet" href="hegemony.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    </head>
+    <body onload="hegInit()" class ="hegemony">
+        <div id="hegHome">
+            <img src = \HEGEMONY\IMG\HEGEMONY-Large.png id = "hegTitleImg"></img>
+            <main class = "hegMenu">
+                <div class = "hegItem hegHeader">Bestiary</div>
+                <div class = "hegItem hegImage">
+                    <figure class = "hegItem hegArsenal hegImgSmall">
+                        <img id = "displaySpriteSmall"></img>
+                    </figure>
+                    <img id = "displaySprite"></img>
+                </div>
+                <div class = "hegItem hegName">
+                    <select onchange="changeMonster();" onfocus="this.selectedIndex = -1;" name="monster" class = "hegBestiary" id="monsterSelector">
+                        <option disabled selected value>Monster</option>
+                    </select>
+                    <select onchange="changeWeapon();" onfocus="this.selectedIndex = -1;" name="weapon" class = "hegArsenal" id="weaponSelector">
+                        <option disabled selected value>Weapon</option>
+                    </select>
+                    <select onchange="changeArtifact();" onfocus="this.selectedIndex = -1;" name="artifact" class = "hegInventory" id="artifactSelector">
+                        <option disabled selected value>Artifact</option>
+                    </select>
+                </div>
+                <div class = "hegItem hegDesc"></div>
+                <div class = "hegItem hegStats">
+                    <p class = "hStatsText" id="hStat1"></p>
+                    <p class = "hStatsText" id="hStat2"></p>
+                    <p class = "hStatsText" id="hStat3"></p>
+                    <p class = "hStatsText" id="hStat4"></p>
+                </div>
+                <div class = "hegItem hegFooter">
+                    <div onclick = "hegPrevPage()" class = "hegArrow" id="hegPrev"></div>
+                    <p class = "hegFooterText">Inventory</p>
+                    <div style = "flex-grow: 1;"></div>
+                    <p class = "hegFooterText">Arsenal</p>
+                    <div onclick = "hegNextPage()" class = "hegArrow" id="hegNext"></div>
+                </div>
+            </main>
+            <div class = "hegItem hegAudioBox">
+                <input onchange=changeAudioSettings(this) type="checkbox" id="soundCheck" name="sound" value="true">
+                <label for="soundCheck"> Sound</label><br>
+            </div>
+            <footer>
+                <p class = "hegCredits">Sounds made by Raven Software.</p>
+                <p class = "hegCredits">Sprites for Ophidian, Serpent Staff, Quartz Flask, Fire Rune and Morph Ovum made by Raven Software.</p>
+                <p class = "hegCredits">Sprites for Crystal Golem made by Raven Software and GHASTLY_DRAGON.</p>
+                <p class = "hegCredits">Sprites for Purifier made by Bledan.</p>
+            </footer>
+            <audio id="hegFadeAudio">
+                <source src="\HEGEMONY\SND\BARMOVUP.ogg" type="audio/ogg">
+                <source src="\HEGEMONY\SND\BARMOVUP.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <audio id="hegMoveAudio">
+                <source src="\HEGEMONY\SND\DORSTP4.ogg" type="audio/ogg">
+                <source src="\HEGEMONY\SND\DORSTP4.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <script type="text/javascript" src="hegObjects.json"></script>
+        <script src="hegemony.js"></script>
+    </body>
+</html>
