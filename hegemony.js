@@ -1,4 +1,4 @@
-/*function animateThroughCSSClass(selector, animClass){
+function animateThroughCSSClass(selector, animClass){
     if(animClass == "transitionCover"){
         document.querySelector(selector).classList.remove("transitionUncover");
     }
@@ -8,7 +8,7 @@
     document.querySelector(selector).classList.remove(animClass);
     void document.querySelector(selector).offsetWidth;
     document.querySelector(selector).classList.add(animClass);
-}*/
+}
 
 function associateOptionWithObject(opt, arr){
     let obj = {};
@@ -381,7 +381,7 @@ function updateFooterText(page){
 
 function changeMonster(){
     let monster = associateOptionWithObject("#monsterSelector", bestiary);
-    document.querySelector("#displaySprite").src = "/HEGEMONY/IMG/MONSTERS/" + monster.src;
+    document.querySelector("#displaySprite").src = "./IMG/MONSTERS/" + monster.src;
     animateThroughCSSClass("#displaySprite", "hegFadeIn");
     audioPlay("#hegFadeAudio");
     document.querySelector(".hegDesc").innerHTML = monster.description;
@@ -401,10 +401,10 @@ function changeMonster(){
 
 function changeWeapon(){
     let weapon = associateOptionWithObject("#weaponSelector", arsenal);
-    document.querySelector("#displaySprite").src = "/HEGEMONY/IMG/WEAPONS/" + weapon.src;
+    document.querySelector("#displaySprite").src = "./IMG/WEAPONS/" + weapon.src;
     animateThroughCSSClass("#displaySprite", "hegFadeIn");
     audioPlay("#hegFadeAudio");
-    document.querySelector("#displaySpriteSmall").src = "/HEGEMONY/IMG/WEAPONS/" + weapon.pickupsrc;
+    document.querySelector("#displaySpriteSmall").src = "./IMG/WEAPONS/" + weapon.pickupsrc;
     document.querySelector(".hegDesc").innerHTML = weapon.description;
     document.querySelector("#hStat1").innerHTML = "<strong>Element: </strong>" + weapon.element;
     document.querySelector("#hStat2").innerHTML = "<strong>Damage: </strong>" + weapon.damage;
@@ -420,7 +420,7 @@ function changeWeapon(){
 
 function changeArtifact(){
     let item = associateOptionWithObject("#artifactSelector", inventory);
-    document.querySelector("#displaySprite").src = "/HEGEMONY/IMG/ARTIFACTS/" + item.src;
+    document.querySelector("#displaySprite").src = "./IMG/ARTIFACTS/" + item.src;
     animateThroughCSSClass("#displaySprite", "hegFadeIn");
     audioPlay("#hegFadeAudio");
     document.querySelector(".hegDesc").innerHTML = item.description;

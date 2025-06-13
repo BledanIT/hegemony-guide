@@ -12,24 +12,8 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     </head>
     <body onload="hegInit()" class ="hegemony">
-        <div id="sideBar">
-            <button id="closeSideBar" onclick="closeSideBar()"><i class="material-icons">close</i></button>
-            <a href="#" id="sideBarLink" onclick='transitToPage("../index.html")'>Home</a>
-            <br>
-            <a href="#" id="sideBarLink" onclick='transitToPage("/HEGEMONY/hegemony.html")'>Hegemony</a>
-            <br>
-            <a href="#" id="sideBarLink" onclick="subMenuState()">Patatine</a>
-            <div class="sideBarSubmenu">
-                <a href="#" id="sideBarLink" onclick='transitToPage("/recipe-page-main/recipe.html")'>Recipe</a>
-            </div>
-        </div>
-        <button id="menuButton" onclick="openSideBar()"><i class="material-icons">menu</i></button>
-        <div id="transitioner">
-        </div>
-        <h1 id="loadingText">Loading...</h1>
-        <div class="loader"></div>
         <div id="hegHome">
-            <img src = \HEGEMONY\IMG\HEGEMONY-Large.png id = "hegTitleImg"></img>
+            <img src = .\IMG\HEGEMONY-Large.png id = "hegTitleImg"></img>
             <main class = "hegMenu">
                 <div class = "hegItem hegHeader">Bestiary</div>
                 <div class = "hegItem hegImage">
@@ -84,18 +68,17 @@
                 <p class = "hegCredits">Sprites for Purifier made by Bledan.</p>
             </footer>
             <audio id="hegFadeAudio">
-                <source src="\HEGEMONY\SND\BARMOVUP.ogg" type="audio/ogg">
-                <source src="\HEGEMONY\SND\BARMOVUP.mp3" type="audio/mpeg">
+                <source src=".\SND\BARMOVUP.ogg" type="audio/ogg">
+                <source src=".\SND\BARMOVUP.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
             </audio>
             <audio id="hegMoveAudio">
-                <source src="\HEGEMONY\SND\DORSTP4.ogg" type="audio/ogg">
-                <source src="\HEGEMONY\SND\DORSTP4.mp3" type="audio/mpeg">
+                <source src=".\SND\DORSTP4.ogg" type="audio/ogg">
+                <source src=".\SND\DORSTP4.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
             </audio>
         </div>
         <script type="text/javascript" src="hegObjects.json"></script>
         <script src="hegemony.js"></script>
-        <script src="../sidebar.js"></script>
     </body>
 </html>
