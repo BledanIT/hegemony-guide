@@ -8,7 +8,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Hegemony</title>
         <link rel="stylesheet" href="hegemony.css">
-        <link rel="stylesheet" href="../sidebar.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     </head>
     <body onload="hegInit()" class ="hegemony">
@@ -23,19 +22,19 @@
                     <img id = "displaySprite"></img>
                 </div>
                 <div class = "hegItem hegName">
-                    <select onchange="fillSelectorsNew(1);" onfocus="this.selectedIndex = -1;" name="realm" class = "hegBestiary" id="monsterRealmSelector">
+                    <select onchange="fillSelectorsNew('bestiary');" onfocus="this.selectedIndex = -1;" name="realm" class = "hegBestiary" id="monsterRealmSelector">
                         <option disabled selected value>Realm</option>
                     </select>
                     <select onchange='changeMonster();' onfocus="this.selectedIndex = -1;" name="monster" class = "hegBestiary" id="monsterSelector">
                         <option disabled selected value>Monster</option>
                     </select>
-                    <select onchange="fillSelectorsNew(2);" onfocus="this.selectedIndex = -1;" name="class" class = "hegArsenal" id="weaponClassSelector">
+                    <select onchange="fillSelectorsNew('arsenal');" onfocus="this.selectedIndex = -1;" name="class" class = "hegArsenal" id="weaponClassSelector">
                         <option disabled selected value>Class</option>
                     </select>
                     <select onchange="changeWeapon();" onfocus="this.selectedIndex = -1;" name="weapon" class = "hegArsenal" id="weaponSelector">
                         <option disabled selected value>Weapon</option>
                     </select>
-                    <select onchange="fillSelectorsNew(3);" onfocus="this.selectedIndex = -1;" name="itemtype" class = "hegInventory" id="inventoryTypeSelector">
+                    <select onchange="fillSelectorsNew('inventory');" onfocus="this.selectedIndex = -1;" name="itemtype" class = "hegInventory" id="inventoryTypeSelector">
                         <option disabled selected value>Type</option>
                     </select>
                     <select onchange="changeArtifact();" onfocus="this.selectedIndex = -1;" name="artifact" class = "hegInventory" id="artifactSelector">

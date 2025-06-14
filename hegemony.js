@@ -14,9 +14,9 @@ function associateOptionWithObject(opt, arr){
     let obj = {};
     const choicex = document.querySelector(opt).selectedIndex;
     const choicey = document.querySelector(opt).options;
-    for(let i = 0; i < arr.length; i++){
-        if(choicey[choicex].text == arr[i].name){
-            obj = arr[i];
+    for(item of arr){
+        if(choicey[choicex].text == item.name){
+            obj = item;
             return obj;
         }
     }
@@ -27,70 +27,6 @@ function clearSelector(selector){
         selector.remove(selector.options.length - 1);
     }
 }
-/*const sidebar = document.getElementById("sideBar");
-let sbToggle = false;
-
-function openSideBar() {
-    sidebar.style.display = "block";
-    sidebar.style.animation = "animateleft 0.4s";
-    document.getElementById("menuButton").style.display = "none";
-    sbToggle = true;
-}
-
-function closeSideBar() {
-    sidebar.style.animation = "animateright 0.4s";
-    sbToggle = false;
-}
-
-sidebar.addEventListener("animationend", shutSideBar);
-
-function shutSideBar() {
-    if(sbToggle == false){
-        sidebar.style.display = "none";
-        document.getElementById("menuButton").style.display = "block";
-    }
-}
-
-function transitToPage(where) {
-    if(sbToggle = true){
-        closeSideBar();
-        }
-    animateThroughCSSClass("#transitioner", "transitionCover");
-    if(where == 1){
-        let myTimeout = setTimeout(goToGuide, 1000);
-    }
-    else{
-        let myTimeout = setTimeout(goToHome, 1000);
-    }
-    let myTimeout2 = setTimeout(showLoadingText, 1000);
-}
-
-function showLoadingText(){
-    document.querySelector("#loadingText").style = "display:block;";
-    document.querySelector(".loader").style = "display:inline-block;";
-    animateThroughCSSClass("#loadingText", "hegFadeIn");
-    let myTimeout = setTimeout(function(){
-        document.querySelector("#loadingText").style = "display:none;";
-        document.querySelector(".loader").style = "display:none;";
-        animateThroughCSSClass("#transitioner", "transitionUncover")}, 1000);
-}
-
-function goToHome() {
-    document.getElementById("home").style.display = "block";
-    document.getElementById("hegHome").style.display = "none";
-    document.querySelector("body").classList.remove("hegemony");
-    document.querySelector("body").classList.add("primoSito");
-    document.title = "Il mio primo sito";
-}
-
-function goToGuide() {
-    document.getElementById("hegHome").style.display = "block";
-    document.getElementById("home").style.display = "none";
-    document.querySelector("body").classList.remove("primoSito");
-    document.querySelector("body").classList.add("hegemony");
-    document.title = "Hegemony";
-    hegInit();
-}*/
 
 let bestiary = [];
 let arsenal = [];
@@ -107,153 +43,75 @@ function parseDatabase(){
     });
 }
 
-function fillSelectors(){
-    for(let i = 1; i < arsenal.length; i++){
-        while(arsenal[i].src == "OPTGROUP"){
-            const group = document.querySelector("#weaponSelector").appendChild(document.createElement("optgroup"));
-            group.label = `${arsenal[i].name}`;
-            group.disabled = true;
-            arsenal.splice(i, 1);
-        }
-        const option = document.querySelector("#weaponSelector").appendChild(document.createElement("option"));
-        option.textContent = `${arsenal[i].name}`;
-        if(arsenal[i].cost.includes("BOTH")){
-            option.style = "color: goldenrod";
-        }
-        else{
-            option.style = "color: white";
-        }
-    }
-    for(let i = 1; i < inventory.length; i++){
-        while(inventory[i].src == "OPTGROUP"){
-            const group = document.querySelector("#artifactSelector").appendChild(document.createElement("optgroup"));
-            group.label = `${inventory[i].name}`;
-            group.disabled = true;
-            inventory.splice(i, 1);
-        }    
-        const option = document.querySelector("#artifactSelector").appendChild(document.createElement("option"));
-        option.textContent = `${inventory[i].name}`;
-        if(inventory[i].stat2.includes("RELIC")){
-            option.style = "color: goldenrod";
-        }
-        else{
-            option.style = "color: white";
-        }
-    }
-    for(let i = 1; i < bestiary.length; i++){
-        while(bestiary[i].src == "OPTGROUP"){
-            const group = document.querySelector("#monsterSelector").appendChild(document.createElement("optgroup"));
-            group.label = `${bestiary[i].name}`;
-            group.disabled = true;
-            bestiary.splice(i, 1);
-        }    
-        const option = document.querySelector("#monsterSelector").appendChild(document.createElement("option"));
-        option.textContent = `${bestiary[i].name}`;
-        if(bestiary[i].stat4.includes("BOSS")){
-            option.style = "color: goldenrod";
-        }
-        else{
-            option.style = "color: white";
-        }
-    }
-}
-
 function fillSelectorsNew(type){
     let choicex;
     let choicey;
     switch(type){
-        case 2:
+        case 'arsenal': //case 2:
             const wepSel = document.querySelector("#weaponSelector");
             const clsSel = document.querySelector("#weaponClassSelector");
             clearSelector(wepSel);
             choicex = clsSel.selectedIndex;
             choicey = clsSel.options;
-            for(let i = 1; i < arsenal.length; i++){
-                if((arsenal[i].class == choicey[choicex].text) && (arsenal[i].src != "OPTGROUP")){
+            arsenal.map((weapon) => {
+                if((weapon.class == choicey[choicex].text) && (weapon.src != "OPTGROUP")){
                     const arsOpt = wepSel.appendChild(document.createElement("option"));
-                    arsOpt.textContent = `${arsenal[i].name}`;
-                    if(arsenal[i].cost.includes("BOTH")){
-                        arsOpt.style = "color: goldenrod";
-                    }
-                    else{
-                        arsOpt.style = "color: white";
-                    }
+                    arsOpt.textContent = `${weapon.name}`;
+                    arsOpt.style = weapon.cost.includes("BOTH") ? "color: goldenrod" : "color: white";
                 }
-            }
+            });
             wepSel.selectedIndex = 0;
             wepSel.style = "color: white;";
             break;
         
-        case 3:
+        case 'inventory': //case 3:
             const itmSel = document.querySelector("#artifactSelector");
             const typSel = document.querySelector("#inventoryTypeSelector");
             clearSelector(itmSel);
             choicex = typSel.selectedIndex;
             choicey = typSel.options;
-            for(let i = 1; i < inventory.length; i++){
-                if((inventory[i].type == choicey[choicex].text) && (inventory[i].src != "OPTGROUP")){
+            inventory.map((artifact) => {
+                if((artifact.type == choicey[choicex].text) && (artifact.src != "OPTGROUP")){
                     const invOpt = itmSel.appendChild(document.createElement("option"));
-                    invOpt.textContent = `${inventory[i].name}`;
-                    if(inventory[i].stat2.includes("RELIC")){
-                        invOpt.style = "color: goldenrod";
-                    }
-                    else{
-                        invOpt.style = "color: white";
-                    }
+                    invOpt.textContent = `${artifact.name}`;
+                    invOpt.style = artifact.stat2.includes("RELIC") ? "color: goldenrod" : "color: white";
                 }
-            }
+            });
             itmSel.selectedIndex = 0;
             itmSel.style = "color: white;";
             break;
         
-        case 1:
+        case 'bestiary': //case 1:
             const monSel = document.querySelector("#monsterSelector");
             const rlmSel = document.querySelector("#monsterRealmSelector");
             clearSelector(monSel);
             choicex = rlmSel.selectedIndex;
             choicey = rlmSel.options;
-            for(let i = 1; i < bestiary.length; i++){
-                if((bestiary[i].realm == choicey[choicex].text) && (bestiary[i].src != "OPTGROUP")){
+            bestiary.map((monster) => {
+                if((monster.realm == choicey[choicex].text) && (monster.src != "OPTGROUP")){
                     const besOpt = monSel.appendChild(document.createElement("option"));
-                    besOpt.textContent = `${bestiary[i].name}`;
-                    if(bestiary[i].stat4.includes("BOSS")){
-                        besOpt.style = "color: goldenrod";
-                    }
-                    else{
-                        besOpt.style = "color: white";
-                    }
+                    besOpt.textContent = `${monster.name}`;
+                    besOpt.style = monster.stat4.includes("BOSS") ? "color: goldenrod" : "color: white";
                 }
-            }
+            });
             monSel.selectedIndex = 0;
             monSel.style = "color: white;";
             break;
 
         default:
-            for(let i = 1; i < bestiary.length; i++){
-                if(bestiary[i].src == "OPTGROUP"){
-                    const group = document.querySelector("#monsterRealmSelector").appendChild(document.createElement("option"));
-                    group.textContent = `${bestiary[i].name}`;
-                    /*group.disabled = true;
-                    bestiary.splice(i, 1);*/
-                }
-            }
-            for(let i = 1; i < arsenal.length; i++){
-                if(arsenal[i].src == "OPTGROUP"){
-                    const group = document.querySelector("#weaponClassSelector").appendChild(document.createElement("option"));
-                    group.textContent = `${arsenal[i].name}`;
-                    /*group.disabled = true;
-                    arsenal.splice(i, 1);*/
-                }
-            }
-            for(let i = 1; i < inventory.length; i++){
-                if(inventory[i].src == "OPTGROUP"){
-                    const group = document.querySelector("#inventoryTypeSelector").appendChild(document.createElement("option"));
-                    group.textContent = `${inventory[i].name}`;
-                    /*group.disabled = true;
-                    inventory.splice(i, 1);*/
-                }
-            }
+            checkEmptyLabel(bestiary, "#monsterRealmSelector");
+            checkEmptyLabel(arsenal, "#weaponClassSelector");
+            checkEmptyLabel(inventory, "#inventoryTypeSelector");
             break;
+    }
+}
+
+function checkEmptyLabel(array, selector) {
+    for(item of array) {
+        if(item.src == "OPTGROUP"){
+            const group = document.querySelector(selector).appendChild(document.createElement("option"));
+            group.textContent = `${item.name}`;
+        } 
     }
 }
 
@@ -262,14 +120,14 @@ function hegInit(){
     const bElems = document.querySelectorAll(".hegBestiary");
     const aElems = document.querySelectorAll(".hegArsenal");
     const iElems = document.querySelectorAll(".hegInventory");
-    for (let i = 0; i < bElems.length; i++) {
-        bElems[i].style = "display: block";
+    for (bElem of bElems) {
+        bElem.style = "display: block";
     }
-    for (let i = 0; i < aElems.length; i++) {
-        aElems[i].style = "display: none";
+    for (aElem of aElems) {
+        aElem.style = "display: none";
     }
-    for (let i = 0; i < iElems.length; i++) {
-        iElems[i].style = "display: none";
+    for (iElem of iElems) {
+        iElem.style = "display: none";
     }
     hegGoToPage(0);
 }
@@ -327,31 +185,31 @@ function hegGoToPage(page){
     const bElems = document.querySelectorAll(".hegBestiary");
     const aElems = document.querySelectorAll(".hegArsenal");
     const iElems = document.querySelectorAll(".hegInventory");
-    for (let i = 0; i < bElems.length; i++) {
-        bElems[i].style = "display: none";
+    for (bElem of bElems) {
+        bElem.style = "display: none";
     }
-    for (let i = 0; i < aElems.length; i++) {
-        aElems[i].style = "display: none";
+    for (aElem of aElems) {
+        aElem.style = "display: none";
     }
-    for (let i = 0; i < iElems.length; i++) {
-        iElems[i].style = "display: none";
+    for (iElem of iElems) {
+        iElem.style = "display: none";
     }
     switch(page){
         case 1:
-            for (let i = 0; i < aElems.length; i++) {
-                aElems[i].style = "display: block";
+            for (aElem of aElems) {
+                aElem.style = "display: block";
                 document.querySelector(".hegImage").style = "align-items: flex-end;";
             }
             break;
         case 2:
-            for (let i = 0; i < iElems.length; i++) {
-                iElems[i].style = "display: block";
+            for (iElem of iElems) {
+                iElem.style = "display: block";
                 document.querySelector(".hegImage").style = "align-items: center;";
             }
             break;
         default:
-            for (let i = 0; i < bElems.length; i++) {
-                bElems[i].style = "display: block";
+            for (bElem of bElems) {
+                bElem.style = "display: block";
                 document.querySelector(".hegImage").style = "align-items: center;";
             }
             break;
@@ -410,12 +268,7 @@ function changeWeapon(){
     document.querySelector("#hStat2").innerHTML = "<strong>Damage: </strong>" + weapon.damage;
     document.querySelector("#hStat3").innerHTML = "<strong>Cost: </strong>" + weapon.cost;
     document.querySelector("#hStat4").innerHTML = "<strong>Class: </strong>" + weapon.class;
-    if (weapon.name == "Purifier"){
-        document.querySelector("#weaponSelector").style = "color: goldenrod;";
-    }
-    else{
-        document.querySelector("#weaponSelector").style = "color: white;";
-    }
+    document.querySelector("#weaponSelector").style = weapon.name == "Purifier" ? "color: goldenrod;" : "color: white;";
 }
 
 function changeArtifact(){
@@ -428,24 +281,14 @@ function changeArtifact(){
     document.querySelector("#hStat2").innerHTML = item.stat2;
     document.querySelector("#hStat3").innerHTML = item.stat3;
     document.querySelector("#hStat4").innerHTML = item.stat4;
-    if (item.name == "Ring of the Owl"){
-        document.querySelector("#artifactSelector").style = "color: goldenrod;";
-    }
-    else{
-        document.querySelector("#artifactSelector").style = "color: white;";
-    }
+    document.querySelector("#artifactSelector").style = item.name == "Ring of the Owl" ? "color: goldenrod;" : "color: white;";
 }
 
 let audioSettings = false;
 
 function changeAudioSettings(){
     var inputElement = document.querySelector("#soundCheck");
-    if(inputElement.checked){
-        audioSettings = true;
-    }
-    else{
-        audioSettings = false;
-    }
+    audioSettings = inputElement.checked ? true : false;
 }
 
 function audioPlay(audioId){
