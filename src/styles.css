@@ -1,0 +1,337 @@
+@font-face {
+    font-family: 'MagicMedieval';
+    src:url("../public/fonts/MagicMedieval.ttf.woff") format('woff'),
+        url("../public/fonts/MagicMedieval.ttf.svg#MagicMedieval") format('svg'),
+        url("../public/fonts/MagicMedieval.ttf.eot"),
+        url("../public/fonts/MagicMedieval.ttf.eot?#iefix") format('embedded-opentype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    margin: 0px;
+    font-size: 16px;
+}
+
+.hegemony{
+    background: url("../public/images/Background-wingsofahero.jpg");
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+    background-color:rgb(56, 39, 31);
+    color: rgb(212, 130, 62);
+}
+
+#hegTitleImg{
+    display: block;
+    width: 80%;
+    height: 80%;
+    max-width: fit-content;
+    max-height: fit-content;
+    border: ridge 0.4rem rgb(212, 130, 62);
+    border-radius: 0.5rem;
+    box-shadow: 0px 5px 5px black;
+    margin: 1rem auto 2rem auto;
+}
+
+
+
+/*BESTIARY*/
+
+.hegMenu{
+    /*background-color: rgb(114, 72, 52);*/
+    background: url("../public/images/FLAT503G.png") repeat top left;
+    border: ridge 0.4rem rgb(212, 130, 62);
+    border-radius: 0.5rem;
+    box-shadow: 0px 5px 5px black, 0 5px 5px black inset;
+    width: 600px;
+    height: 600px;
+    margin: 0 auto 0 auto;
+    padding: 3%;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 1fr/*repeat(4, 1fr)*/;
+    grid-template-rows: 10% 10% 40% 20% 8%;
+    column-gap: 5%;
+    row-gap: 3%;
+    grid-template-areas:
+    ". header header ."
+    "name name name name"
+    "image image description description"
+    "stats stats description description"
+    "footer footer footer footer";
+}
+
+.hegItem{
+    background-color: rgb(56, 39, 31);
+    color: white;
+    font-family: 'MagicMedieval';/*font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;*/
+    font-size: 1.1em;
+    border: ridge 0.3rem rgb(212, 130, 62);
+    border-radius: 0.4rem;
+    box-shadow: 0px 5px 5px black;
+    text-shadow: 0px 2px 2px black;
+}
+
+.hegHeader{
+    color: white;
+    font-size: 2.5em;
+    font-weight: bold;
+    text-align: center;
+    align-content: center;
+    grid-area: header;
+    text-shadow: 0px 3px 3px black;
+}
+
+.hegName{
+    display: flex;
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    justify-content: space-around;
+    align-content: center;
+    grid-area: name;
+    padding: 2%;
+}
+
+select{
+    border: ridge 0.2rem rgb(212, 130, 62);
+    border-radius: 0.4rem;
+    font-family: 'MagicMedieval';
+    font-size: 0.8em;
+    text-shadow: 0px 2px 2px black;
+    box-shadow: 0 2px 2px black;
+    background-color: rgb(87, 60, 48);
+    color: white;
+    width:fit-content;
+}
+
+select>option{
+    border: ridge 0.2rem rgb(212, 130, 62);
+    border-radius: 0.4rem;
+}
+
+.hegDesc{
+    color: white;
+    font-weight: normal;
+    text-align: justify;
+    grid-area: description;
+    padding: 3%;
+}
+
+.hegStats{
+    display: flex;
+    flex-direction: column;
+    grid-area: stats;
+    padding: 2%;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.hStatsText{
+    width: auto;
+    height: 0.9em;
+    font-size: 0.9em;
+    font-weight: normal;
+    text-align: left;
+    color: white;
+    margin: 0.3rem;
+}
+
+.hegImage{
+    min-width: 300px;
+    display: flex;
+    grid-area: image;
+    align-items: flex-end;
+    justify-content: center;
+    flex: 0 1 auto;
+    padding: 0.6rem;
+    position: relative;
+}
+
+.hegImgSmall{
+    min-width: 20px;
+    min-height: 20px;
+    width: auto;
+    height: auto;
+    position: absolute;
+    text-align: center;
+    padding: 1px;
+    margin: 5px;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+}
+
+.hegFadeIn{
+    animation: zoominfadein 0.6s;
+}
+
+.hegFadeOut{
+    animation: zoominfadein 0.6s reverse;
+}
+
+@keyframes zoominfadein{
+    from{
+        transform: scale(1.5);
+        opacity: 0;
+    }
+
+    to{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.hegFooter{
+    display: flex;
+    color: white;
+    font-weight: bold;
+    font-size: 1.3em;
+    grid-area: footer;
+    padding: 2%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hegFooterText{
+    padding: 0.8rem;
+}
+
+.hegArrow{
+    cursor: pointer;
+}
+
+.hegArrow:active{ 
+        transform: scale(0.9); 
+}
+
+#hegPrev{
+    width: 0;
+    height: 0;
+    border-top: 1rem solid transparent;
+    border-right: 2rem solid rgb(212, 130, 62);
+    border-bottom: 1rem solid transparent;
+    filter: drop-shadow(0px 2px 2px black);
+}
+
+#hegNext{
+    width: 0;
+    height: 0;
+    border-top: 1rem solid transparent;
+    border-left: 2rem solid rgb(212, 130, 62);
+    border-bottom: 1rem solid transparent;
+    filter: drop-shadow(0px 2px 2px black);
+}
+
+.hegBestiary{
+    display: block;
+}
+
+.hegArsenal{
+    display: block;
+}
+
+.hegInventory{
+    display: block;
+}
+
+.hegAudioBox{
+    margin: 0.6rem 0 1.2rem 1.2rem;
+    padding: 0.3rem;
+    width: fit-content;
+}
+
+input[type="checkbox"] {
+    accent-color: rgb(212, 130, 62);
+}
+
+footer {
+    padding-bottom: 1rem;
+}
+
+.hegCredits{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 0.6rem;
+    text-shadow: 0px 2px 2px black;
+    margin-left: 0.6rem;
+    color: rgb(243, 173, 115);
+}
+
+@media screen and (max-width: 600px){
+    #hegTitleImg{
+        display: block;
+        width: auto;
+        height: auto;
+        max-width: 97.4%;
+        max-height: fit-content;
+        border: ridge 0.4rem rgb(212, 130, 62);
+        border-radius: 0.5rem;
+        box-shadow: 0px 5px 5px black;
+        margin: 1rem auto 2rem auto;
+    }
+
+    .hegMenu{
+        /*background-color: rgb(114, 72, 52);*/
+        background: url("../public/images/FLAT503G.png") repeat top left;
+        border: ridge 0.4rem rgb(212, 130, 62);
+        border-radius: 0.5rem;
+        box-shadow: 0px 5px 5px black, 0 5px 5px black inset;
+        width: auto;
+        height: fit-content;
+        margin: 0 auto 0 auto;
+        padding: 3%;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.5fr 1fr 2fr 2fr 1fr 1fr;
+        column-gap: 5%;
+        row-gap: 2%;
+        grid-template-areas:
+        "header"
+        "name"
+        "image" 
+        "description"
+        "stats"
+        "footer";
+    }
+
+    .hegName{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        color: white;
+        font-size: 1.5em;
+        font-weight: bold;
+        text-align: center;
+        justify-content: space-around;
+        align-content: center;
+        align-items: center;
+        grid-area: name;
+        padding: 2%;
+    }
+
+    select{
+        border: ridge 0.2rem rgb(212, 130, 62);
+        border-radius: 0.4rem;
+        font-family: 'MagicMedieval';
+        font-size: 0.8em;
+        text-shadow: 0px 2px 2px black;
+        box-shadow: 0 2px 2px black;
+        background-color: rgb(87, 60, 48);
+        color: white;
+        width:fit-content;
+        height: fit-content;
+    }
+
+    .hegStats{
+        display: flex;
+        flex-direction: column;
+        grid-area: stats;
+        padding: 2%;
+        flex-wrap: wrap;
+        align-content: center;
+        align-items: center;
+    }
+}

@@ -1,0 +1,339 @@
+{
+    "monsters":[
+        {
+            "name":"",
+            "src":"",
+            "description":"",
+            "health":"",
+            "weakness":"",
+            "resistance":"",
+            "stat4":"",
+            "realm":""
+        },
+        {
+            "name":"Heretic",
+            "src":"OPTGROUP",
+            "description":"",
+            "health":"",
+            "weakness":"",
+            "resistance":"",
+            "stat4":"",
+            "realm":""
+        },
+        {
+            "name":"Ophidian",
+            "src":"SNKEA1.png",
+            "description":"The Ophidians slither in the darkest chambers of the Dome of D'Sparil and protect their lairs with deadly, energy-tossing tridents.",
+            "health":"280",
+            "weakness":"Lightning, Earth",
+            "resistance":"Fire, Ice",
+            "stat4":"",
+            "realm":"Heretic"
+        },
+        {
+            "name":"Hexen II",
+            "src":"OPTGROUP",
+            "description":"",
+            "health":"",
+            "weakness":"",
+            "resistance":"",
+            "stat4":"",
+            "realm":""
+        },
+        {
+            "name":"Crystal Golem",
+            "src":"GOL4A1.png",
+            "description":"This unique kind of Golem shoots lasers from his forehead and is apparently indestructible. Its crystal body has to somehow be weakened first... ",
+            "health":"2000",
+            "weakness":"none",
+            "resistance":"none",
+            "stat4":"<u>BOSS</u>",
+            "realm":"Hexen II"
+        },
+        {
+            "name":"New",
+            "src":"OPTGROUP",
+            "description":"",
+            "health":"",
+            "weakness":"",
+            "resistance":"",
+            "stat4":"",
+            "realm":""
+        },
+        {
+            "name":"Giant Rat",
+            "src":"GRATA1.png",
+            "description":"These infesting rats are fortunately very easy to dispatch and a minor threat, compared to what else awaits you...",
+            "health":"30",
+            "weakness":"Earth",
+            "resistance":"none",
+            "stat4":"",
+            "realm":"New"
+        },
+        {
+            "name":"Alraune",
+            "src":"ROSEA0.png",
+            "description":"Creature resembling a giant rose, it attacks by sprouting out tendrils that close in and scratch you.",
+            "health":"640",
+            "weakness":"Fire",
+            "resistance":"Earth, Posion",
+            "stat4":"",
+            "realm":"New"
+        },
+        {
+            "name":"Banshee",
+            "src":"BANSA1.png",
+            "description":"Fallen maidens who use their new occult powers to send homing projectiles, hit you with lightspeed projectiles and to chant a powerfull morphing spell on you! Be very careful!",
+            "health":"500",
+            "weakness":"none",
+            "resistance":"none",
+            "stat4":"",
+            "realm":"New"
+        }
+    ],
+
+    "weapons":[
+        {
+            "name":"",
+            "src":"",
+            "pickupsrc": "",
+            "description":"",
+            "element":"",
+            "damage":"",
+            "cost":"",
+            "class":""
+        },
+        {
+            "name":"Fighter",
+            "src":"OPTGROUP",
+            "pickupsrc": "",
+            "description":"",
+            "element":"",
+            "damage":"",
+            "cost":"",
+            "class":""
+        },
+        {
+            "name":"Spiked Gauntlets",
+            "src":"FPCHA0.png",
+            "pickupsrc": "WGNTA0.png",
+            "description":"The Fighter starts the game with these Gauntlets and always has them “At hand” as a last resort. Each punch wears down your enemy’s defense and every third punch always delivers a Mighty Blow!",
+            "element":"none",
+            "damage":"moderate",
+            "cost":"none",
+            "class":"Fighter"
+        },
+        {
+            "name":"Timon's Axe",
+            "src":"FAX2A0.png",
+            "pickupsrc": "WFAXA0.png",
+            "description":"The Axe makes you want to really jump in there and hack away at your enemies as it deals out much more damage than the Gauntlets. This is also a close-range-only weapon, so be careful not to get carried away!",
+            "element":"Lightning",
+            "damage":"high",
+            "cost":"Blue Mana - 2",
+            "class":"Fighter"
+        },
+        {
+            "name":"Trident of the Sea God",
+            "src":"TRIDD0.png",
+            "pickupsrc": "WTRIA0.png",
+            "description":"When you are in need of some frontal stopping power, this weapon is for you! By using blue mana to glaciate the points, this Trident stabs through the enemy in front of you, freezing him in the meantime. When out of mana, the Trident still proves itself somewhat useful.",
+            "element":"Ice",
+            "damage":"high",
+            "cost":"Blue Mana - 3",
+            "class":"Fighter"
+        },
+        {
+            "name":"Poison Daggers",
+            "src":"THBLA0.png",
+            "pickupsrc": "WTHKA0.png",
+            "description":"These daggers are imbued with blue mana converted into poisonous liquid and are used to cut enemies at breathtakingly speed! A Fighter rarely misses his target when he’s using Poison Daggers.",
+            "element":"Poison",
+            "damage":"low",
+            "cost":"Blue Mana - 2",
+            "class":"Fighter"
+        },
+        {
+            "name":"Vorpal Sword",
+            "src":"TSW2A0.png",
+            "pickupsrc": "WTSWA0.png",
+            "description":"The Fighter can employ a powerful mana infused sword during most combats. This sword can be used without mana to power its magic but its damage correspondingly decreases when there is no such power source.",
+            "element":"none",
+            "damage":"high",
+            "cost":"Blue Mana - 2",
+            "class":"Fighter"
+        },
+        {
+            "name":"Hammer of Retribution",
+            "src":"FPHMA0.png",
+            "pickupsrc": "WFHMA0.png",
+            "description":"Now you can really start dealing some death! The Hammer can be thrown straight out in a skull-splitting attack or you can get up-close and personal for that special bludgeoning that only you can provide, even if you run out of Mana!",
+            "element":"Fire",
+            "damage":"high",
+            "cost":"Green Mana - 3",
+            "class":"Fighter"
+        },
+        {
+            "name":"Purifier",
+            "src":"PUREA0.png",
+            "pickupsrc": "WPURA0.png",
+            "description":"The Purifier is the Fighter’s ultimate weapon: it breathes a stream of glittering shards. These shards issue forth in a deadly twin stream, rending anything that breaks its brilliant path.",
+            "element":"none",
+            "damage":"very high",
+            "cost":"<u>BOTH</u> Mana - 1",
+            "class":"Fighter"
+        },
+        {
+            "name":"Cleric",
+            "src":"OPTGROUP",
+            "pickupsrc": "",
+            "description":"",
+            "element":"",
+            "damage":"",
+            "cost":"",
+            "class":""
+        },
+        {
+            "name":"Serpent Staff",
+            "src":"CSSFA0.png",
+            "pickupsrc": "WCSSA0.png",
+            "description":"The essence of the sacred Kalrath serpent is contained within this staff. Feed it with the blue mana and it will serve you faithfully by spitting two venom spheres at your enemies. Using this staff up close will drain your enemy’s life and give some of it to you!",
+            "element":"Poison",
+            "damage":"low",
+            "cost":"Blue Mana - 2",
+            "class":"Cleric"
+        },
+        {
+            "name":"Mage",
+            "src":"OPTGROUP",
+            "pickupsrc": "",
+            "description":"",
+            "element":"",
+            "damage":"",
+            "cost":"",
+            "class":""
+        },
+        {
+            "name":"Disintegration Beam",
+            "src":"DTOBA0.png",
+            "pickupsrc": "WDOBA0.png",
+            "description":"This orb channels arcane power in an energy stream which grants incredible damage and precision. Furthermore, the stream pierces through any kind of material, making it very useful for killing a line of foes without even letting them see you!",
+            "element":"none",
+            "damage":"medium",
+            "cost":"Green Mana - 1",
+            "class":"Mage"
+        },
+        {
+            "name":"Assassin",
+            "src":"OPTGROUP",
+            "pickupsrc": "",
+            "description":"",
+            "element":"",
+            "damage":"",
+            "cost":"",
+            "class":""
+        },
+        {
+            "name":"Umbral Blade",
+            "src":"UBL2A0.png",
+            "pickupsrc": "WUMBA0.png",
+            "description":"This light-weighted blade imbued with shadows, other than allowing to swiftly rend through victims' tissues, holds the unfathomable power of restructuring a spirit's body, so that the pain it inflicts can be felt at its fullest!",
+            "element":"Decay",
+            "damage":"high",
+            "cost":"Green Mana - 2",
+            "class":"Assassin"
+        },
+        {
+            "name":"Demonist",
+            "src":"OPTGROUP",
+            "pickupsrc": "",
+            "description":"",
+            "element":"",
+            "damage":"",
+            "cost":"",
+            "class":""
+        },
+        {
+            "name":"Ritual Knife",
+            "src":"VDAGA0.png",
+            "pickupsrc": "WDAGA0.png",
+            "description":"Although menacing, this knife actually doesn't hold any magic property and is not really suitable for combat. Still, when you need to take things up close this is an option...",
+            "element":"none",
+            "damage":"very low",
+            "cost":"none",
+            "class":"Demonist"
+        }
+    ],
+
+    "artifacts":[
+        {
+            "name":"",
+            "src":"",
+            "description":"",
+            "maxamount":"",
+            "stat2":"",
+            "stat3":"",
+            "stat4":""
+        },
+        {
+            "name":"Artifacts",
+            "src":"OPTGROUP",
+            "description":"",
+            "maxamount":"",
+            "stat2":"",
+            "stat3":"",
+            "stat4":""
+        },
+        {
+            "name":"Quartz Flask",
+            "src":"PTN2A0.png",
+            "description":"Gives +25 to your health.",
+            "maxamount":"25",
+            "stat2":"",
+            "stat3":"",
+            "stat4":"",
+            "type":"Artifacts"
+        },
+        {
+            "name":"Fire Rune",
+            "src":"FIRNA0.png",
+            "description":"Once deployed, it fires two jets of fire around itself for a short period of time.",
+            "maxamount":"5",
+            "stat2":"",
+            "stat3":"",
+            "stat4":"",
+            "type":"Artifacts"
+        },
+        {
+            "name":"Morph Ovum",
+            "src":"EGGCA0.png",
+            "description":"Morphs your victim into a chicken. Finger-lickin' good!",
+            "maxamount":"3",
+            "stat2":"<strong>Class: </strong>Cleric",
+            "stat3":"",
+            "stat4":"",
+            "type":"Artifacts"
+        },
+        {
+            "name":"Relics",
+            "src":"OPTGROUP",
+            "description":"",
+            "maxamount":"",
+            "stat2":"",
+            "stat3":"",
+            "stat4":"",
+            "type":""
+        },
+        {
+            "name":"Ring of the Owl",
+            "src":"ROWLA0.png",
+            "description":"This particular relic holds the essence of the eyes of the sacred owl, protector of the forests. It grants a perfect vision even in the darkest places as long as it's worn.",
+            "maxamount":"1",
+            "stat2":"<u>RELIC</u>",
+            "stat3":"<strong>Power up: </strong>Torch",
+            "stat4":"<strong>Duration: </strong>infinite",
+            "type":"Relics"
+        }
+    ]
+}
+    
