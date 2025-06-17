@@ -241,7 +241,7 @@ function updateFooterText(page){
 
 function changeMonster(){
     let monster = associateOptionWithObject("#monsterSelector", bestiary);
-    document.querySelector("#displaySprite").src = "/images/MONSTERS/" + monster.src;
+    document.querySelector("#displaySprite").src = "/public/images/MONSTERS/" + monster.src;
     animateThroughCSSClass("#displaySprite", "hegFadeIn");
     audioPlay("#hegFadeAudio");
     document.querySelector(".hegDesc").innerHTML = monster.description;
@@ -261,7 +261,7 @@ function changeMonster(){
 
 function changeWeapon(){
     let weapon = associateOptionWithObject("#weaponSelector", arsenal);
-    document.querySelector("#displaySprite").src = "/images/WEAPONS/" + weapon.src;
+    document.querySelector("#displaySprite").src = "/public/images/WEAPONS/" + weapon.src;
     animateThroughCSSClass("#displaySprite", "hegFadeIn");
     audioPlay("#hegFadeAudio");
     document.querySelector("#displaySpriteSmall").src = "/images/WEAPONS/" + weapon.pickupsrc;
@@ -275,7 +275,7 @@ function changeWeapon(){
 
 function changeArtifact(){
     let item = associateOptionWithObject("#artifactSelector", inventory);
-    document.querySelector("#displaySprite").src = "/images/ARTIFACTS/" + item.src;
+    document.querySelector("#displaySprite").src = "/public/images/ARTIFACTS/" + item.src;
     animateThroughCSSClass("#displaySprite", "hegFadeIn");
     audioPlay("#hegFadeAudio");
     document.querySelector(".hegDesc").innerHTML = item.description;
