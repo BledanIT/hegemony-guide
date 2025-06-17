@@ -241,7 +241,7 @@ function updateFooterText(page){
 
 function changeMonster(){
     let monster = associateOptionWithObject("#monsterSelector", bestiary);
-    document.querySelector("#displaySprite").src = "/public/images/MONSTERS/" + monster.src;
+    document.querySelector("#displaySprite").src = "./public/images/MONSTERS/" + monster.src;
     animateThroughCSSClass("#displaySprite", "hegFadeIn");
     audioPlay("#hegFadeAudio");
     document.querySelector(".hegDesc").innerHTML = monster.description;
@@ -261,10 +261,10 @@ function changeMonster(){
 
 function changeWeapon(){
     let weapon = associateOptionWithObject("#weaponSelector", arsenal);
-    document.querySelector("#displaySprite").src = "/public/images/WEAPONS/" + weapon.src;
+    document.querySelector("#displaySprite").src = "./public/images/WEAPONS/" + weapon.src;
     animateThroughCSSClass("#displaySprite", "hegFadeIn");
     audioPlay("#hegFadeAudio");
-    document.querySelector("#displaySpriteSmall").src = "/public/images/WEAPONS/" + weapon.pickupsrc;
+    document.querySelector("#displaySpriteSmall").src = "./public/images/WEAPONS/" + weapon.pickupsrc;
     document.querySelector(".hegDesc").innerHTML = weapon.description;
     document.querySelector("#hStat1").innerHTML = "<strong>Element: </strong>" + weapon.element;
     document.querySelector("#hStat2").innerHTML = "<strong>Damage: </strong>" + weapon.damage;
@@ -275,7 +275,7 @@ function changeWeapon(){
 
 function changeArtifact(){
     let item = associateOptionWithObject("#artifactSelector", inventory);
-    document.querySelector("#displaySprite").src = "/public/images/ARTIFACTS/" + item.src;
+    document.querySelector("#displaySprite").src = "./public/images/ARTIFACTS/" + item.src;
     animateThroughCSSClass("#displaySprite", "hegFadeIn");
     audioPlay("#hegFadeAudio");
     document.querySelector(".hegDesc").innerHTML = item.description;
