@@ -275,7 +275,7 @@ function changeWeapon(){
 
 function changeArtifact(){
     let item = associateOptionWithObject("#artifactSelector", inventory);
-    document.querySelector("#displaySprite").src = "./images/ARTIFACTS/" + item.src;
+    document.querySelector("#displaySprite").src = "/images/ARTIFACTS/" + item.src;
     animateThroughCSSClass("#displaySprite", "hegFadeIn");
     audioPlay("#hegFadeAudio");
     document.querySelector(".hegDesc").innerHTML = item.description;
